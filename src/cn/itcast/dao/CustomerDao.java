@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 
+import cn.itcast.domain.Customer;
+
 public interface CustomerDao {
 
-	List getCustomerList(DetachedCriteria dc, int start, int pagesize);
+	List<Customer> getPageList(DetachedCriteria dc, Integer start, Integer pagesize);
 	Integer getTotalCount(DetachedCriteria dc);
 }

@@ -11,11 +11,14 @@ import org.hibernate.criterion.Projections;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
+import cn.itcast.dao.BaseDao;
 import cn.itcast.dao.CustomerDao;
 import cn.itcast.domain.Customer;
 
-public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao {
+public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDao {
 
+
+	/*
 	@Override
 	public Integer getTotalCount(DetachedCriteria dc) {
 		//这里是我自己想用sql查询代码，因为传进来是离线查询dc对象，dc貌似没有拆分属性方法，
@@ -51,12 +54,13 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 		
 		
 	}
-
+	*/
+/*
 	@Override
 	public List<Customer> getCustomerList(DetachedCriteria dc, int start, int pagesize) {
 		List<Customer> list = (List<Customer>)getHibernateTemplate().findByCriteria(dc, start, pagesize);
-		System.out.println(list);
 		return list;
 	}
 
+ */
 }

@@ -10,11 +10,14 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
+import cn.itcast.dao.BaseDao;
 import cn.itcast.dao.UserDao;
 import cn.itcast.domain.User;
 //继承hibernate模板，然后想用这个模板想要创建出来需要sessionfactory，
 //所以HibernateDaoSupport要为Dao注入sessionFactroy
-public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
+
+//public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 	@Override
 	public User getByUserCode(final String usercode) {
 		// HQL
@@ -41,11 +44,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 			return null;
 		}
 	}
-
-	@Override
-	public void save(User u) {
-		// TODO Auto-generated method stub
-		getHibernateTemplate().save(u);
-	}
+//
+//	@Override
+//	public void save(User u) {
+//		// TODO Auto-generated method stub
+//		getHibernateTemplate().save(u);
+//	}
 
 }
