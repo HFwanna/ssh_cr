@@ -49,8 +49,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 			return null;
 		}
 		
-		//自己尝试代码，因为觉得list如果为空，返回的也是空，所以效果应该和上面一样
-		//return list.get(0).intValue();
+		
 		
 		
 	}
